@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Ứng dụng chuyển đội tiện tệ</title>
+        <script src="bai-tap-chuyen-doi-tien-te.js"></script>
+    </head>
+    <body>
+        <form method="get" name="changecurrency">
+            <table>
+                <tr>
+                    <th>Amount</th>
+                    <th></th>
+                    <th>From Currency</th>
+                    <th></th>
+                    <th>To Currency</th>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="number" id="amount">
+                    </td>
+                    <td></td>
+                    <td align="center">
+                        <select id="from">
+                            <option value="VND" selected>VietNam</option>
+                            <option value="USD">USD</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td align="center">
+                        <select id="to">
+                            <option value="USD" selected>USD</option>
+                            <option value="VND">VietNam</option>
+                        </select>
+                    </td>
+                    <td><input type="button" value="Convert" onclick="myconvert()"></td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <label>
+                            Result <input type="text" id="result" size="60">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <script src="bai-tap-chuyen-doi-tien-te.js"></script>
+    </body>
+</html>
