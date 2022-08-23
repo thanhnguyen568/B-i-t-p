@@ -22,8 +22,9 @@ let i = 0, check = 0, result = "";
 while (i < n){
     check = lasonguyento(i);
     if( check == 1 ){
-        result += i + " ";
+        result += i + ", ";
     }
     ++i;
 }
 console.log(result);
+document.write(result);
