@@ -1,30 +1,26 @@
-function lasonguyento(n){
-    let flag = 1;
+//số lượng cần in ra
+let numbers = prompt("Nhap so luong so nguyen to can in ra: ");
 
-    if (n <2){
-        return flag = 0;
-    }
+//biến đếm số nguyên tố
+let count = 0;
 
-    let i = 2;
-    while(i < n){
-        if(n % i == 0) {
-            flag = 0;
-            break;
+//biến tăng nhận giá trị sô nguyên tố
+let n = 2;
+
+let prime = "";
+
+while (count < numbers){
+    let flag = true;
+
+        for (let i = 2; i <= Math.sqrt(n); i++){
+            if(n % i === 0) {
+                flag = false;
+            }
         }
-        i++;
-    }
-
-    return flag;
+        if(flag == true){
+            count++;
+            prime = prime + n + " ";
+        }
+        n++;
 }
-
-let n = prompt(" nhap mot so n: ");
-let i = 0, check = 0, result = "";
-while (i < n){
-    check = lasonguyento(i);
-    if( check == 1 ){
-        result += i + ", ";
-    }
-    ++i;
-}
-console.log(result);
-document.write(result);
+    alert(prime);
