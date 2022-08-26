@@ -126,6 +126,6 @@ function bai_8() {
     let num2 = parseInt(prompt("Nhập só cuối trong khoảng:"));
     let i;
     while (i >= num1 && i <= num2) {
-        
+
     }
 }
