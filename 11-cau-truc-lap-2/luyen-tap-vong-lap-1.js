@@ -79,7 +79,7 @@ function bai_5() {
         F2 = F;
         sum += F;
     }
-    document.writeln("Tong 20 so fibonaci dau tien la: " +sum);
+    document.writeln("Tong 20 so fibonaci dau tien la: " + sum);
 }
 
 //--BÀI 6--//
@@ -116,10 +116,21 @@ function bai_7() {
 
 function bai_8() {
 
-    let num1 = parseInt(prompt("Nhập só đầu trong khoảng:"));
-    let num2 = parseInt(prompt("Nhập só cuối trong khoảng:"));
-    let i;
-    while (i >= num1 && i <= num2) {
+    let numstart = parseInt(prompt("Nhap so gioi han tren:"));
+    console.log("numstart: " + numstart);
+    let numend = parseInt(prompt("Nhap so gioi han duoi:"));
+    console.log("numend: " + numend);
+    let random = Math.floor(Math.random() * (numend - numstart)) + numstart;
+    console.log("random: " + random);
 
+    let number = parseInt(prompt("Nhap so ban doan:"));
+    for (let i = 0; i < numend; i++) {
+        if (number === random) {
+            alert("Doan dung roi");
+            break;
+        } else {
+            alert("Doan sai");
+            break;
+        }
     }
 }
