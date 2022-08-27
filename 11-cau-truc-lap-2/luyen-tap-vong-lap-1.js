@@ -1,35 +1,30 @@
 //--BÀI 1--//
 function bai_1() {
-    let result = 0;
 
-    for (i = 1; i < 100; i++) {
-        result = result + "" + i;
-        if (i == 99) {
-            alert(result);
+    for (let i = 1; i <= 100; i++) {
+        if (i === 99) {
             alert("Bài 1 hoàn thành!");
             break;
         }
+        document.writeln(i);
     }
 }
 
 //--BÀI 2--//
 function bai_2() {
 
-    let nhietdo;
-
-    do {
-        nhietdo = parseInt(prompt("Nhập nhiệt độ: "));
+    let nhietdo = parseInt(prompt("nhap nhiet do: "));
+    while (nhietdo >= 20 || nhietdo <= 100) {
+        if (nhietdo < 20) {
+            alert("tang nhiet do len !");
+        } else if (nhietdo > 100) {
+            alert("giam nhiet do xuong !");
+        } else {
+            alert("ok");
+            break;
+        }
+        nhietdo = parseInt(prompt("nhap nhiet do: "));
     }
-    while (nhietdo < 20 || nhietdo > 100)
-    {
-        nhietdo = parseInt(prompt("Nhập nhiệt độ: "));
-    }
-    if (nhietdo < 20) {
-        alert("tang nhiet do");
-    } else {
-        alert("Giảm nhiệt độ");
-    }
-    alert("Nhiệt độ ok!");
 }
 
 
