@@ -6,7 +6,7 @@ function bai_1() {
             alert("Bài 1 hoàn thành!");
             break;
         }
-        document.writeln(i);
+        document.writeln(i + "<br>");
     }
 }
 
@@ -34,18 +34,15 @@ function bai_3() {
     let F0 = 1;
     let F1 = 1;
     let Fi;
-    let result_fibonaci = F0 + "-" + F1;
+
 
     for (let i = 0; i < 20; i++) {
-        if (number < 2) {
-        } else {
-            Fi = F0 + F1;
-            result_fibonaci = result_fibonaci + '-' + Fi;
-            F0 = F1;
-            F1 = Fi;
-        }
+        Fi = F0 + F1;
+        F0 = F1;
+        F1 = Fi;
+        document.writeln(Fi + "<br>");
     }
-    alert("Dãy số fibonaci: " + result_fibonaci);
+
 }
 
 //--BÀI 4--//
