@@ -29,18 +29,19 @@ function bai_2() {
 
 
 //--BÀI 3--//
+
 function bai_3() {
 
     let F0 = 1;
     let F1 = 1;
-    let Fi;
+    let F = 0;
 
 
     for (let i = 0; i < 20; i++) {
-        Fi = F0 + F1;
+        F = F0 + F1;
         F0 = F1;
-        F1 = Fi;
-        document.writeln(Fi + "<br>");
+        F1 = F;
+        document.writeln(F + "<br>");
     }
 
 }
@@ -48,15 +49,15 @@ function bai_3() {
 //--BÀI 4--//
 function bai_4() {
 
+    let F0 = 1;
     let F1 = 1;
-    let F2 = 1;
     let F = 0;
 
-    for (i = 2; i > 0; i++) {
-        F = F1 + F2;
-        F1 = F2;
-        F2 = F;
-        if (F % 5 == 0) {
+    for (let i = 2; i > 0; i++) {
+        F = F0 + F1;
+        F0 = F1;
+        F1 = F;
+        if (F % 5 === 0) {
             alert("Số chia hết cho 5 đầu tiên trong dãy Fibonaci là: " + F);
             break;
         }
@@ -64,20 +65,21 @@ function bai_4() {
 }
 
 //--BÀI 5--//
+
 function bai_5() {
 
-    let F0 = 1;
     let F1 = 1;
+    let F2 = 1;
     let F = 0;
-    let sum_fibonaci = 2;
+    let sum = 0;
 
-    for (i = 2; i < 20; i++) {
-        F = F0 + F1;
-        sum_fibonaci += F;
-        F0 = F1;
-        F1 = F;
+    for (let i = 0; i < 20; i++) {
+        F = F1 + F2;
+        F1 = F2;
+        F2 = F;
+        sum += F;
     }
-    alert(sum_fibonaci);
+    document.writeln("Tong 20 so fibonaci dau tien la: " +sum);
 }
 
 //--BÀI 6--//
@@ -86,7 +88,7 @@ function bai_6() {
     let N;
     let sum = 0;
 
-    for (i = 0; i < 30; i++) {
+    for (let i = 0; i <= 30; i++) {
         N = i * 7;
         sum += N;
     }
@@ -94,10 +96,10 @@ function bai_6() {
 }
 
 //--BÀI 7--//
+
 function bai_7() {
 
     for (let i = 1; i <= 100; i++) {
-
         if (i % 3 === 0 && i % 5 === 0) {
             document.writeln("Fizz Buzz");
         } else if (i % 3 === 0) {
@@ -107,11 +109,11 @@ function bai_7() {
         } else {
             document.writeln(i);
         }
-
     }
 }
 
 //--BÀI 8--//
+
 function bai_8() {
 
     let num1 = parseInt(prompt("Nhập só đầu trong khoảng:"));
