@@ -17,14 +17,17 @@ function bai_2() {
 
     let nhietdo;
 
-    nhietdo = parseInt(prompt("Nhập nhiệt độ: "));
-    while (nhietdo < 20 || nhietdo > 100) {
-        if (nhietdo < 20) {
-            alert("tăng nhiệt độ");
-        } else {
-            alert("Giảm nhiệt độ");
-        }
+    do {
         nhietdo = parseInt(prompt("Nhập nhiệt độ: "));
+    }
+    while (nhietdo < 20 || nhietdo > 100)
+    {
+        nhietdo = parseInt(prompt("Nhập nhiệt độ: "));
+    }
+    if (nhietdo < 20) {
+        alert("tang nhiet do");
+    } else {
+        alert("Giảm nhiệt độ");
     }
     alert("Nhiệt độ ok!");
 }
@@ -33,21 +36,18 @@ function bai_2() {
 //--BÀI 3--//
 function bai_3() {
 
+    let F0 = 1;
     let F1 = 1;
-    let F2 = 1;
     let Fi;
-    let i = 2;
-    let number = prompt('Số lượng trong dãy fibonaci cần in ra: ');
-    let result_fibonaci = "1-1";
+    let result_fibonaci = F0 + "-" + F1;
 
-    while (i < number) {
+    for (let i = 0; i < 20; i++) {
         if (number < 2) {
         } else {
-            Fi = F1 + F2;
+            Fi = F0 + F1;
             result_fibonaci = result_fibonaci + '-' + Fi;
-            F1 = F2;
-            F2 = Fi;
-            i++;
+            F0 = F1;
+            F1 = Fi;
         }
     }
     alert("Dãy số fibonaci: " + result_fibonaci);
