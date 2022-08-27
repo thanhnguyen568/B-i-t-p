@@ -130,7 +130,7 @@ function bai_8() {
             break;
         } else {
             alert("Doan sai");
-            break;
         }
+        number = parseInt(prompt("Nhap so ban doan:"));
     }
 }
