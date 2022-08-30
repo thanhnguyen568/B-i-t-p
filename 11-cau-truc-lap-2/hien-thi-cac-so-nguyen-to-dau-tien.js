@@ -17,7 +17,7 @@ while (count < numbers){
                 check = false;
             }
         }
-        if(check == true){
+        if(check === true){
             count++;
             prime = prime + n + " ";
         }

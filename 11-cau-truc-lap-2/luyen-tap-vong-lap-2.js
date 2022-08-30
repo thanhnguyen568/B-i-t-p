@@ -98,4 +98,15 @@ function Bai_4() {
     }
 }
 
+function Bai_5() {
 
+    let m = parseInt(prompt("Nhap so tien goc ban dau: "));
+    let r = parseInt(prompt("Nhap lai suat ngan hang: "))/100;
+    let n = parseInt(prompt("Nhap so nam gui: "));
+    let money = m;
+
+    for (let i = 0; i <= n; i++) {
+        money = money + money*r;
+    }
+    document.writeln();
+}
