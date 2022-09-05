@@ -67,6 +67,21 @@ function array6() {
 
 //Bai 7
 function array7() {
-    let arr_b7 = []
+    let arr_b7 = [11, 22, 33, 44, 55, 66, 77, 88, 99, 93];
+    let num_v = parseInt(prompt("Nhap vao so V bat ky: "));
+    let check = false
 
+    for (let i = 0; i < arr_b7.length; i++) {
+        if (num_v === arr_b7[i]) {
+            for (let j = 0; j < arr_b7.length; j++) {
+                check = true;
+                arr_b7[j] = arr_b7[j + 1];
+            }
+        }
+        console.log(arr_b7);
+        arr_b7[9] = 0;
+    }
+    if (check === false) {
+        document.writeln("V is not in the array");
+    }
 }
