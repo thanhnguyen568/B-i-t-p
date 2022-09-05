@@ -64,3 +64,9 @@ function array6() {
         document.writeln("V is not in the array")
     }
 }
+
+//Bai 7
+function array7() {
+    let arr_b7 = []
+
+}
