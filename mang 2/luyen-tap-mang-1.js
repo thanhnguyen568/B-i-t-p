@@ -95,5 +95,33 @@ function array8() {
         array8[i] = prompt("Nhap phan tu thu: " + (i + 1));
     }
 
-    
+    let k;
+    for (let i = 0; i < array8.length; i++) {
+        for (let j = i + 1; j < array8.length; j++) {
+            if (array8[i] < array8[j]) {
+                k = array8[i]
+                array8[i] = array8[j];
+                array8[j] = k;
+            }
+        }
+    }
+    console.log(array8)
+}
+
+//Bai 9
+function array9() {
+    let n = prompt("Nhap vao so phan tu cua mang: ");
+    let array9a = [];
+    let array9b = [];
+    let array9c = [];
+    for (let i = 0; i < n; i++) {
+        array9a[i] = prompt("Nhap phan tu thu: " + (i + 1) + " cua mang a");
+        array9b[i] = prompt("Nhap phan tu thu: " + (i + 1) + " cua mang b");
+    }
+
+    array9c = array9a.concat(array9b);
+
+    console.log(array9a);
+    console.log(array9b);
+    console.log(array9c)
 }
