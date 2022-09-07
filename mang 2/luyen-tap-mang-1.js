@@ -51,6 +51,7 @@ function array5() {
 // Bai 6
 function array6() {
     let arr_b6 = [23, 65, 45, 87, 26, 25, 78, 96, 5, 47];
+    console.log(arr_b6);
     let num_v = parseInt(prompt("Nhap vao so V bat ky: "));
     let check = false
 
@@ -67,21 +68,32 @@ function array6() {
 
 //Bai 7
 function array7() {
-    let arr_b7 = [11, 22, 33, 44, 55, 66, 77, 88, 99, 93];
-    let num_v = parseInt(prompt("Nhap vao so V bat ky: "));
-    let check = false
+    let n = prompt(" Nhap so phan tu cua mang :");
+    let arr_b7 = [];
+    for (let i = 0; i < n; i++) {
+        arr_b7[i] = prompt("phan tu thu: " + (i + 1))
+    }
 
+    let v = prompt("Nhap phan tu can xoa: ");
     for (let i = 0; i < arr_b7.length; i++) {
-        if (num_v === arr_b7[i]) {
-            for (let j = 0; j < arr_b7.length; j++) {
-                check = true;
+        if (v === arr_b7[i]) {
+            for (let j = i; j < arr_b7.length; j++) {
                 arr_b7[j] = arr_b7[j + 1];
             }
         }
-        console.log(arr_b7);
-        arr_b7[9] = 0;
     }
-    if (check === false) {
-        document.writeln("V is not in the array");
+    arr_b7[n - 1] = 0;
+    console.log(arr_b7);
+}
+
+//Bai 8
+function array8() {
+
+    let n = prompt("Nhap vao so phan tu cua mang: ");
+    let array8 = [];
+    for (let i = 0; i < n; i++) {
+        array8[i] = prompt("Nhap phan tu thu: " + (i + 1));
     }
+
+    
 }
