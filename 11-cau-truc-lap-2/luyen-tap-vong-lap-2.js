@@ -102,11 +102,10 @@ function Bai_5() {
 
     let m = parseInt(prompt("Nhap so tien goc ban dau: "));
     let r = parseInt(prompt("Nhap lai suat ngan hang: "))/100;
-    let n = parseInt(prompt("Nhap so nam gui: "));
-    let money = m;
+    let n = parseInt(prompt("Nhap so thang gui: "));
 
-    for (let i = 0; i <= n; i++) {
-        money = money + money*r;
+    for (let i = 0; i < n; i++) {
+        m += m*r;
     }
-    document.writeln();
+    document.writeln(m);
 }
