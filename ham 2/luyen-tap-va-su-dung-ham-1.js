@@ -29,8 +29,10 @@ function addNumbers() {
 }
 
 result = 0;
+alert("bai 4" + result);
 result = addNumbers();
-console.log(result);
+alert("bai 4" + result);
+
 
 //Bai 5
 
@@ -38,11 +40,16 @@ function findConstellation(findStar) {
 
     let arrStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
     let arrConstellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "UrsaMajor", "Leo"];
+    let index = -1;
     for (let i = 0; i < arrStar.length; i++) {
         if (findStar === arrStar[i]) {
-            document.writeln(arrConstellation[i]);
+            index = i;
             break;
         }
     }
-
+    if (index === -1){
+        alert("khong co ngoi sao");
+    }else {
+        document.writeln(arrConstellation[index]);
+    }
 }
