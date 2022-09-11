@@ -77,7 +77,7 @@ function checkPositive(check) {
 }
 
 //Bai 7
-function swapNumber(a,b) {
+function swapNumber(a, b) {
     let array7 = [];
     a = prompt("Nhap so a: ");
     array7.push(a);
@@ -94,7 +94,7 @@ function swapArray(...array8) {
     let n = prompt("Nhap do dai cua mang")
 
     for (let i = 0; i < n; i++) {
-        array8[i] = prompt("Nhap so thu " +i);
+        array8[i] = prompt("Nhap so thu " + i);
 
     }
     array8.reverse();
@@ -102,6 +102,23 @@ function swapArray(...array8) {
 }
 
 //Bai 9
-function f() {
+function checkString(...array9) {
 
+    let str = prompt("Nhap do dai cua mang")
+    for (let i = 0; i < str; i++) {
+        array9[i] = prompt("Nhap ky tu vao mang")
+    }
+
+    let a = prompt("nhap ky can kiem tra")
+    let count = 0;
+    for (let i = 0; i < array9.length; i++) {
+        if (a === array9[i]){
+            count++;
+            document.writeln(array9[i] + "<br>");
+        }
+        else {
+            count = -1;
+        }
+    }
+    document.writeln("so lan " + a + " xuat hien trong mang: " + count);
 }
