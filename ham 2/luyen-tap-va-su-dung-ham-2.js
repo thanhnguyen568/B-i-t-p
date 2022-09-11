@@ -1,12 +1,12 @@
 //Bai 1
-function square(a) {
+function calSquare(a) {
 
     let number1 = a * a;
     document.getElementById("1").value = +number1;
 }
 
 //Bai 2
-function area(r) {
+function calArea(r) {
 
     const pi = 3.14159;
     let S = pi * r * r;
@@ -36,16 +36,72 @@ function calFact(n) {
 function checkNumber(a) {
 
     let check;
-    if ( isNaN(a)){
+    if (isNaN(a)) {
         check = false;
-    }else
+    } else
         check = true;
     document.getElementById("4").value = check;
 }
 
 //Bai 5
-function smallest(...array) {
+function findSmallest(...array5) {
 
-    console.log(array)
+    for (let i = 0; i < 3; i++) {
+        array5[i] = prompt("Nhap phan tu thu: " + (i + 1));
+    }
+
+    let temp;
+    for (let i = 0; i < 3; i++) {
+        for (let j = i + 1; j < 3; j++) {
+            if (array5[i] < array5 [j]) {
+                temp = array5[i];
+                array5[i] = array5[j];
+                array5[j] = temp;
+            }
+        }
+    }
+    console.log(array5);
+    alert("So nho nhat la: " + array5[2]);
+}
+
+//Bai 6
+function checkPositive(check) {
+
+    let n = prompt("Nhap vao so nguyen: ");
+
+    if (n > 0 && n % 1 === 0) {
+        check = true;
+    } else
+        check = false;
+    console.log(check);
+}
+
+//Bai 7
+function swapNumber(a,b) {
+    let array7 = [];
+    a = prompt("Nhap so a: ");
+    array7.push(a);
+    b = prompt("Nhap so b: ");
+    array7.push(b);
+    console.log(array7);
+    array7.reverse();
+    console.log(array7);
+}
+
+//Bai 8
+function swapArray(...array8) {
+
+    let n = prompt("Nhap do dai cua mang")
+
+    for (let i = 0; i < n; i++) {
+        array8[i] = prompt("Nhap so thu " +i);
+
+    }
+    array8.reverse();
+    console.log(array8);
+}
+
+//Bai 9
+function f() {
 
 }

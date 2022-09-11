@@ -6,12 +6,12 @@
 </head>
 <body>
 
-    <input type="button" value="bai_1" id="1" onclick="square(prompt('Nhap so tinh binh phuong'))">
+    <input type="button" value="bai_1" id="1" onclick="calSquare(prompt('Nhap so tinh binh phuong'))">
     <br>
     <br>
     <label>Bai_2</label>
-    <input type="button" id="2.1" value="dien tich" onclick="area(prompt('Nhap ban kinh'))">
-    <input type="button" id="2.2" value="chu vi" onclick="area(prompt('Nhap ban kinh'))">
+    <input type="button" id="2.1" value="dien tich" onclick="calArea((prompt('Nhap ban kinh'))">
+    <input type="button" id="2.2" value="chu vi" onclick="calArea(prompt('Nhap ban kinh'))">
     <br>
     <br>
     <input type="button" value="bai_3" id="3" onclick="calFact(parseInt(prompt('Nhap so n')))">
@@ -20,7 +20,16 @@
     <input type="button" value="bai_4" id="4" onclick="checkNumber(prompt('nhap vao so'))">
     <br>
     <br>
-    <input type="button" value="bai_5" id="5" onclick="smallest(prompt('nhap vao so'))">
+    <input type="button" value="bai_5" id="5" onclick="findSmallest()">
+    <br>
+    <br>
+    <input type="button" value="bai_6" id="6" onclick="checkPositive()">
+    <br>
+    <br>
+    <input type="button" value="bai_7" id="7" onclick="swapNumber()">
+    <br>
+    <br>
+    <input type="button" value="bai_8" id="8" onclick="swapArray()">
 
     <script src="luyen-tap-va-su-dung-ham-2.js"></script>
 </body>
