@@ -9,10 +9,10 @@ function calSquare(a) {
 function calArea(r) {
 
     const pi = 3.14159;
-    let S = pi * r * r;
-    let C = pi * r * 2;
-    document.getElementById("2.1").value = +S;
-    document.getElementById("2.2").value = +C;
+    let s = pi * r * r;
+    let c = pi * r * 2;
+    document.getElementById("2.1").value = +s;
+    document.getElementById("2.2").value = +c;
 }
 
 //Bai 3
