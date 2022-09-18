@@ -10,7 +10,7 @@ function case1() {
                 document.writeln("&nbsp&nbsp");
             }
         }
-        document.writeln("<br>")
+        document.writeln("<br>");
     }
 }
 
@@ -68,6 +68,7 @@ function case4() {
 function case5() {
 
     let n = prompt("Nhap luong nhan vien chua the: ");
+    console.log(n);
     let salary = 0;
     let tax = 0;
 
@@ -79,13 +80,20 @@ function case5() {
         tax = n * 0.05;
     }
     salary = n - tax;
-    document.writeln("Luong thuc nhan la: " + salary + "<br>" + "Thue: " + tax);
+    // document.writeln("Luong thuc nhan la: " + salary + "<br>" + "Thue: " + tax);
+    document.getElementById("2").innerHTML = "Luong thuc nhan la: " + salary + "<br>" + "Thue: " + tax;
 }
 
 //Bai 2
 function case6() {
 
-    let t = prompt("Nhap ky tu bat ky: ");
+
+    let t;
+    do {
+        t = prompt("Nhap ky tu bat ky: ");
+    } while (!isNaN(t));
+
+    console.log(t);
 
     switch (t) {
         case "o":
@@ -98,11 +106,42 @@ function case6() {
         case "I":
         case "A":
         case "E":
+            // document.writeln("Ky tu " + t + " la nguyen am");
+            document.getElementById("2").innerHTML = "Ky tu " + t + " la nguyen am";
             break;
-            document.writeln("Ky tu " + t + " la nguyen am");
         default:
+            // document.writeln("Ky tu " + t + " la phu am");
+            document.getElementById("2").innerHTML = "Ky tu " + t + " la phu am";
             break;
-            document.writeln("Ky tu " + t + " la phu am");
+    }
+}
+
+//Yeu cau 3
+//Bai 1
+function case7() {
+    let n = parseInt(prompt("Nhap do giai của mang"));
+    let a = [];
+    let b = [];
+    let prefix = 0;
+
+    for (let i = 0; i < n; i++) {
+        a[i] = parseInt(prompt("Nhap pt mang a"));
     }
 
+    for (let i = 0; i < a.length; i++) {
+        prefix += a[i];
+        b.push(prefix);
+    }
+
+    document.getElementById("3").innerHTML = "Mang a " + a + "<br>" + "Mang b " + b;
+}
+
+//Bai 2
+function case8() {
+
+}
+
+//Bai 3
+function case9() {
+    
 }
