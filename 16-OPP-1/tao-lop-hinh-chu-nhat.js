@@ -1,4 +1,4 @@
-class rectangle {
+class Rectangle {
     constructor(a, b) {
         this.a = a;
         this.b = b;
@@ -24,7 +24,7 @@ class rectangle {
     }
 }
 
-let recA = new rectangle(parseInt(prompt("Nhap do dai canh a < 400")),parseInt(prompt("Nhap do dai canh b < 400")));
+let recA = new Rectangle(parseInt(prompt("Nhap do dai canh a < 400")),parseInt(prompt("Nhap do dai canh b < 400")));
 console.log(recA);
 
 recA.area();

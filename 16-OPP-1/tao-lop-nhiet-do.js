@@ -1,4 +1,4 @@
-class temperature {
+class Temperature {
     constructor(c) {
         this.c = c;
     }
@@ -14,7 +14,7 @@ class temperature {
         document.writeln("<br>")
     }
 }
-let temp = new temperature(25);
+let temp = new Temperature(25);
 console.log(temp);
 temp.changeF();
 temp.changeK();
