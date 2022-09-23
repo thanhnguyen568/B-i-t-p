@@ -2,65 +2,73 @@
 //Bai 1
 function case1() {
 
+    let draw = "";
     for (let i = 1; i <= 4; i++) {
         for (let j = 1; j <= 5; j++) {
             if (i === 1 || i === 4 || j === 1 || j === 5) {
-                document.writeln("*");
+                draw += "*";
             } else {
-                document.writeln("&nbsp&nbsp");
+                draw += "&nbsp&nbsp";
             }
         }
-        document.writeln("<br>");
+        draw += "<br>";
     }
+    document.getElementById("1").innerHTML = draw;
 }
 
 //Bai 2
 function case2() {
 
+    let draw = "";
     for (let i = 1; i <= 5; i++) {
         for (let j = 1; j <= i; j++) {
             if (i === 3 && j === 2 || i === 4 && j === 2 || i === 4 && j === 3) {
-                document.writeln("&nbsp&nbsp");
+                draw += "&nbsp&nbsp";
             } else {
-                document.writeln("*");
+                draw += "*";
             }
         }
-        document.writeln("<br>");
+        draw += "<br>";
     }
+    document.getElementById("1").innerHTML = draw;
 }
 
 //Bai 3
 function case3() {
 
+    let draw = "";
     for (let i = 1; i < 6; i++) {
         for (let j = 0; j < 2 * 6 - 1; j++) {
             if (j < (6 - 1 + i) && j > (6 - 1 - i)) {
-                document.writeln("*");
+                draw += "*";
             } else {
-                document.writeln("&nbsp&nbsp");
+                draw += "&nbsp&nbsp";
             }
         }
-        document.writeln("<br>");
+        draw += "<br>";
     }
+    document.getElementById("1").innerHTML = draw;
 }
 
 //Bai 4
 function case4() {
 
+    let draw = "";
     let m = 6;
     let n = 6;
     for (let i = 1; i <= 6; i++) {
         for (let j = 1; j <= 2 * 6 - 1; j++) {
             if (j === m || j === n || i === 6) {
-                document.writeln("*");
+                draw += "*";
             } else {
-                document.writeln("&nbsp&nbsp");
+                draw += "&nbsp&nbsp";
             }
         }
         m--;
         n++;
-        document.writeln("<br>");
+        draw += "<br>";
     }
+    document.getElementById("1").innerHTML = draw;
 }
 
 //Yeu cau 2
@@ -208,6 +216,7 @@ function case10() {
         } else if (arr1[i] === "4") {
             array = "Bốn "
         }
+        document.getElementById("<br>");
         document.getElementById("3").innerText += array;
     }
 }
@@ -215,27 +224,63 @@ function case10() {
 //Bai 5
 function case11() {
 
-    let num = [1, 2, 3, 4, 5, 6, 7];
-    let list = ["cafe", "Cam vat", "Nuoc ep ca rot", "Nuoc ep ca chua", "Nuoc loc", "Nuoc dua", "Thoat goi mon"];
+    let cost = [0, 11, 12, 13, 14, 15, 16];
+    let list = [0, "cafe", "Cam vat", "Nuoc ep ca rot", "Nuoc ep ca chua", "Nuoc loc", "Nuoc dua", "Thoat goi mon"];
     let menu;
-    let bill = []; //1,3,5
-    let index;
+    let quantity;
+    let bill = [];
+    let amount = 0;
 
     do {
         menu = parseInt(prompt("Nhap so tren menu: "));
-        bill.push(menu);
-    }
-    while (menu !== 7) ;
-
-    bill.pop();
-    console.log(bill);
-
-    for (let i = 0; i <bill.length ; i++) {
-        if (num.indexOf(bill[i]) === 1){
-            console.log(list[1]);
+        if (menu > 0 && menu < 7) {
+            quantity = parseInt(prompt(list[menu] + " co gia la: " + cost[menu] + " nghin dong ! - " + "Nhap so luong mua: "));
+            bill.push(quantity * cost[menu]);
+            console.log(bill);
+        } else if (menu === 7) {
+            alert("Thoat chon mon !");
         }
     }
+    while (menu !== 7);
+
+    for (let i = 0; i < bill.length; i++) {
+        amount += bill[i];
+    }
+    document.getElementById("3").innerHTML = amount + " nghin dong";
 }
+
+//Yeu cau 4
+//Bai 1
+function case11() {
+
+    let str = prompt("Nhap chuoi ky tu: ");
+    console.log(str);
+
+    let str1 = str.toLocaleLowerCase();
+    console.log(str1);
+
+    let str2 = str1.charAt(0).toUpperCase() + str1.slice(1);
+    console.log(str2);
+
+    let str3
+    for (let i = 0; i < str2.length; i++) {
+        if (str2[i] === " ") {
+            str3 = str2.charAt(i + 1).toLocaleUpperCase();
+        }
+    }
+
+    // let str3;
+    // if (str1[0] === " ") {
+    //     str3 = str1.slice(1);
+    // }else {
+    //     str3 = str1;
+    // }
+    // document.getElementById("4").innerHTML += str3;
+
+
+}
+
+
 
 
 
