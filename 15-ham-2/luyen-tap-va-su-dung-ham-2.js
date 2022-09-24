@@ -36,10 +36,7 @@ function calFact(n) {
 function checkNumber(a) {
 
     let check;
-    if (isNaN(a)) {
-        check = false;
-    } else
-        check = true;
+    check = !isNaN(a);
     document.getElementById("4").value = check;
 }
 

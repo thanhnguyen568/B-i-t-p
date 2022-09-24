@@ -251,36 +251,135 @@ function case11() {
 
 //Yeu cau 4
 //Bai 1
-function case11() {
+function main() {
 
-    let str = prompt("Nhap chuoi ky tu: ");
-    console.log(str);
+    function standardized(str) {
 
-    let str1 = str.toLocaleLowerCase();
-    console.log(str1);
+        let changeToArr = str.split(" ");
+        let newArray = [];
 
-    let str2 = str1.charAt(0).toUpperCase() + str1.slice(1);
-    console.log(str2);
-
-    let str3
-    for (let i = 0; i < str2.length; i++) {
-        if (str2[i] === " ") {
-            str3 = str2.charAt(i + 1).toLocaleUpperCase();
+        for (let i = 0; i < changeToArr.length; i++) {
+            changeToArr[i] = changeToArr[i].toLowerCase()
+            if (changeToArr[i] !== "") {
+                newArray.push(changeToArr[i]);
+            }
         }
+
+        let standardizedArray = [];
+        for (let i = 0; i < newArray.length; i++) {
+            newArray[i] = newArray[i].charAt(0).toUpperCase() + newArray[i].slice(1);
+            standardizedArray.push(newArray[i]);
+        }
+        return standardizedArray.join(" ");
     }
 
-    // let str3;
-    // if (str1[0] === " ") {
-    //     str3 = str1.slice(1);
-    // }else {
-    //     str3 = str1;
-    // }
-    // document.getElementById("4").innerHTML += str3;
+    function findStringMax(standardizedStr) {
 
+        let lengthChar;
+        let lengthOfArray = [];
+        for (let i = 0; i < standardizedStr.length; i++) {
+            lengthChar = standardizedStr[i].length;
+            lengthOfArray.push(lengthChar);
+        }
 
+        for (let i = 0; i < lengthOfArray.length; i++) {
+            if (lengthOfArray[i] < lengthOfArray [i + 1]) {
+                let temp1 = lengthOfArray[i];
+                lengthOfArray[i] = lengthOfArray[i + 1];
+                lengthOfArray[i + 1] = temp1;
+                let temp2 = standardizedStr[i];
+                standardizedStr[i] = standardizedStr[i + 1];
+                standardizedStr[i + 1] = temp2;
+            }
+        }
+        return standardizedStr[0];
+    }
+
+    let str = prompt("Nhap ten can chuan hoa:");
+    let standardString = standardized(str);
+    let standardArray = standardString.split(" ");
+
+    console.log(str);
+    console.log(standardized(str));                                     // Nguyen Van Thanh
+    console.log(findStringMax(standardArray));
+
+    document.getElementById("4").innerHTML = "Chuoi ban dau: " + str + "<br>"
+        + "Chuoi sau chuan hoa la: " + standardized(str) + "<br>"
+        + "Ky tu dai nhat trong chuoi la: " + findStringMax(standardArray) + "<br>"
 }
 
+//Bai 2
+function case12() {
+    let s = "acbac";
+    let arrayS = s.split("");
+    let sortArrayS = arrayS.sort();     //a,a,b,c,c
+    let count = 0;
+    let result = "";
 
+    for (let i = 0; i < sortArrayS.length; i++) {
+        if (sortArrayS[i] !== sortArrayS [i + 1]) {
+            result += sortArrayS[i] + " ";
+            count++;
+        }
+    }
+    document.getElementById("4").innerHTML = "Co " + count + " ki tu khac nhau la: " + result;
+}
 
+//Bai 3
+// let s1 = "aabcc"
+// let s2 = "adcaa"
+// let s3 = s1.concat(s2);
+// let array = s3.split("").sort()     //aaaaabcccd
+//
+//
+// function removeDuplicate(arr) {
+//     let array = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (array.indexOf(arr[i]) === -1) {
+//             array.push(arr[i]);
+//         }
+//     }
+//     return array;           //a b c d
+// }
+// console.log(removeDuplicate(array));
+// function cont() {
+//
+// }
 
+//Bai 1
+function case14() {
 
+    function sumEvenNumber(array) {
+
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j <= array.length; j++) {
+                if (array[i][j] % 2 === 0) {
+                    // console.log(array[i][j]);
+                    sum += array[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    function array2D() {
+        let numberM = parseInt(prompt("Nhap do dai hang m: "));
+        let m = [];
+        for (let i = 0; i < numberM; i++) {
+            m[i] = parseInt(prompt("Nhap phan tu vi tri: " + i + " hang m"));
+        }
+        let numberN = parseInt(prompt("Nhap do dai hang n: "));
+        let n = [];
+        for (let i = 0; i < numberN; i++) {
+            n[i] = parseInt(prompt("Nhap phan tu vi tri: " + i + " cot n"));
+        }
+        let arr = [];
+        arr.push(m);
+        arr.push(n);
+        return arr;
+    }
+
+    let result = sumEvenNumber(array2D());
+    document.getElementById("5").innerHTML = "Tong so chan mang 2 chieu da nhap la: " + result;
+}
