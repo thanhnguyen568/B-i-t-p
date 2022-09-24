@@ -89,12 +89,11 @@ function case5() {
     }
     salary = n - tax;
     // document.writeln("Luong thuc nhan la: " + salary + "<br>" + "Thue: " + tax);
-    document.getElementById("2").innerHTML = "Luong thuc nhan la: " + salary + "<br>" + "Thue: " + tax;
+    document.getElementById("1").innerHTML = "Luong thuc nhan la: " + salary + "<br>" + "Thue: " + tax;
 }
 
 //Bai 2
 function case6() {
-
 
     let t;
     do {
@@ -115,11 +114,11 @@ function case6() {
         case "A":
         case "E":
             // document.writeln("Ky tu " + t + " la nguyen am");
-            document.getElementById("2").innerHTML = "Ky tu: " + t + " la nguyen am";
+            document.getElementById("1").innerHTML = "Ky tu: " + t + " la nguyen am";
             break;
         default:
             // document.writeln("Ky tu " + t + " la phu am");
-            document.getElementById("2").innerHTML = "Ky tu: " + t + " khong phai la nguyen am";
+            document.getElementById("1").innerHTML = "Ky tu: " + t + " khong phai la nguyen am";
             break;
     }
 }
@@ -141,7 +140,7 @@ function case7() {
         prefix += a[i];
         b.push(prefix);
     }
-    document.getElementById("3").innerHTML = "Mang a: " + a + "<br>" + "Mang b: " + b;
+    document.getElementById("1").innerHTML = "Mang a: " + a + "<br>" + "Mang b: " + b;
 }
 
 //Bai 2
@@ -160,7 +159,7 @@ function case8() {
     }
 
     console.log(arrC);
-    document.getElementById("3").innerHTML = "Phan tu mang B khong nam trong mang A la: " + arrC;
+    document.getElementById("1").innerHTML = "Phan tu mang B khong nam trong mang A la: " + arrC;
 
 }
 
@@ -184,7 +183,7 @@ function case9() {
     }
     console.log(numerators);
     console.log(denominators);
-    document.getElementById("3").innerHTML = "Phan so lon nhat la: " + numerators[numerators.length - 1] + "/" + denominators[denominators.length - 1] +
+    document.getElementById("1").innerHTML = "Phan so lon nhat la: " + numerators[numerators.length - 1] + "/" + denominators[denominators.length - 1] +
         "<br>" + "Co chi so la: " + [numerators.length - 1];
 
 }
@@ -217,7 +216,7 @@ function case10() {
             array = "Bốn "
         }
         document.getElementById("<br>");
-        document.getElementById("3").innerText += array;
+        document.getElementById("1").innerText += array;
     }
 }
 
@@ -246,7 +245,7 @@ function case11() {
     for (let i = 0; i < bill.length; i++) {
         amount += bill[i];
     }
-    document.getElementById("3").innerHTML = amount + " nghin dong";
+    document.getElementById("1").innerHTML = amount + " nghin dong";
 }
 
 //Yeu cau 4
@@ -303,7 +302,7 @@ function main() {
     console.log(standardized(str));                                     // Nguyen Van Thanh
     console.log(findStringMax(standardArray));
 
-    document.getElementById("4").innerHTML = "Chuoi ban dau: " + str + "<br>"
+    document.getElementById("1").innerHTML = "Chuoi ban dau: " + str + "<br>"
         + "Chuoi sau chuan hoa la: " + standardized(str) + "<br>"
         + "Ky tu dai nhat trong chuoi la: " + findStringMax(standardArray) + "<br>"
 }
@@ -322,7 +321,7 @@ function case12() {
             count++;
         }
     }
-    document.getElementById("4").innerHTML = "Co " + count + " ki tu khac nhau la: " + result;
+    document.getElementById("1").innerHTML = "Co " + count + " ki tu khac nhau la: " + result;
 }
 
 //Bai 3
@@ -381,5 +380,5 @@ function case14() {
     }
 
     let result = sumEvenNumber(array2D());
-    document.getElementById("5").innerHTML = "Tong so chan mang 2 chieu da nhap la: " + result;
+    document.getElementById("1").innerHTML = "Tong so chan mang 2 chieu da nhap la: " + result;
 }
