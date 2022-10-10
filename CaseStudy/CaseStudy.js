@@ -325,60 +325,241 @@ function case12() {
 }
 
 //Bai 3
-// let s1 = "aabcc"
-// let s2 = "adcaa"
-// let s3 = s1.concat(s2);
-// let array = s3.split("").sort()     //aaaaabcccd
-//
-//
-// function removeDuplicate(arr) {
-//     let array = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         if (array.indexOf(arr[i]) === -1) {
-//             array.push(arr[i]);
-//         }
-//     }
-//     return array;           //a b c d
-// }
-// console.log(removeDuplicate(array));
-// function cont() {
-//
-// }
+function case13() {
 
-//Bai 1
-function case14() {
+    let s1 = "aabcc"
+    let s2 = "adcaa"
+    let arr = removeDuplicate(s1);
+    console.log(arr);
 
-    function sumEvenNumber(array) {
-
-        let sum = 0;
-        for (let i = 0; i < array.length; i++) {
-            for (let j = 0; j <= array.length; j++) {
-                if (array[i][j] % 2 === 0) {
-                    // console.log(array[i][j]);
-                    sum += array[i][j];
-                }
+    function removeDuplicate(str) {
+        let newStr = str.split(" ").sort();
+        let newArray = [];
+        let element;
+        newArray.push(newStr[0]);
+        for (let i = 0; i < str.length; i++) {
+            if (newStr[i] !== newStr[i + 1]) {
+                element = newStr[i + 1];
+                newArray.push(element);
             }
         }
-        return sum;
+        return newArray;
     }
 
-    function array2D() {
-        let numberM = parseInt(prompt("Nhap do dai hang m: "));
-        let m = [];
-        for (let i = 0; i < numberM; i++) {
-            m[i] = parseInt(prompt("Nhap phan tu vi tri: " + i + " hang m"));
-        }
-        let numberN = parseInt(prompt("Nhap do dai hang n: "));
-        let n = [];
-        for (let i = 0; i < numberN; i++) {
-            n[i] = parseInt(prompt("Nhap phan tu vi tri: " + i + " cot n"));
-        }
-        let arr = [];
-        arr.push(m);
-        arr.push(n);
-        return arr;
-    }
 
+}
+
+//Yeu Cau 5
+//Bai 1
+function sumEvenNumber(array) {
+
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j <= array.length; j++) {
+            if (array[i][j] % 2 === 0) {
+                // console.log(array[i][j]);
+                sum += array[i][j];
+            }
+        }
+    }
+    return sum;
+}
+
+function array2D() {
+    let numberM = parseInt(prompt("Nhap do dai hang m: "));
+    let m = [];
+    for (let i = 0; i < numberM; i++) {
+        m[i] = parseInt(prompt("Nhap phan tu vi tri: " + i + " hang m"));
+    }
+    let numberN = parseInt(prompt("Nhap do dai hang n: "));
+    let n = [];
+    for (let i = 0; i < numberN; i++) {
+        n[i] = parseInt(prompt("Nhap phan tu vi tri: " + i + " cot n"));
+    }
+    let arr = [];
+    arr.push(m);
+    arr.push(n);
+    console.log(arr);
+    return arr;
+}
+
+function case14() {
     let result = sumEvenNumber(array2D());
     document.getElementById("1").innerHTML = "Tong so chan mang 2 chieu da nhap la: " + result;
+}
+
+//Bai 2
+function isPrime(number) {
+
+    let flag = false;
+    if (number === 2) {
+        flag = true;
+    } else if (number < 2) {
+        flag = false;
+    } else {
+        for (let i = 0; i < number; i++) {
+            flag = number % 2 !== 0;
+        }
+    }
+    return flag;
+}
+
+function sumIsPrime(array) {
+
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            if (isPrime(array[i][j]) === true) {
+                sum += array[i][j];
+            }
+        }
+    }
+    return sum;
+}
+
+function displayIsPrime(result) {
+
+    let display = "";
+    for (let i = 0; i < result.length; i++) {
+        for (let j = 0; j < result[i].length; j++) {
+            if (isPrime(result[i][j]) === true) {
+                display += result[i][j] + " ";
+            }
+        }
+    }
+    return display;
+}
+
+function case15() {
+    let arr = [
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10]
+    ];
+    let sum = sumIsPrime(arr);
+    let display = displayIsPrime(arr);
+    document.getElementById("1").innerHTML = "Cac so nguyen to la: " + display
+        + "<br>"
+        + "Tong cac so nguyen to la: " + sum;
+}
+
+//Bai 3
+function isMax(array2d) {
+
+    let array = [];
+    for (let i = 0; i < array2d.length; i++) {
+        for (let j = 0; j < array2d[i].length; j++) {
+            array.push(array2d[i][j]);
+        }
+    }
+    let newArray = array.sort(function (a, b) {
+        return a - b;
+    })
+
+    console.log(newArray);
+    document.getElementById("1").innerHTML = "So nho nhat trong mang: " + newArray[0]
+        + "<br>"
+        + "So lon nhat trong mang: " + (newArray[newArray.length - 1]);
+
+}
+
+function case16() {
+    let arr = [[1, 2, 3, 11, 5], [6, 12, 8, 1, 5, 10]];
+    isMax(arr);
+}
+
+//Yeu cau 6
+//OOP
+
+class Students {
+    constructor(name, age, email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getAge() {
+        return this.age;
+    }
+
+    getEmail() {
+        return this.email;
+    }
+
+    setName(newName) {
+        this.name = newName;
+    }
+
+    setAge(newAge) {
+        this.age = newAge;
+    }
+
+    setEmail(newEmail) {
+        this.email = newEmail;
+    }
+}
+
+let studentA = new Students('Cong', 50, 'cong@codegym.vn');
+let studentB = new Students('Trung', 40, 'trung@codegym.vn');
+
+let arr = [studentA, studentB];
+
+function add() {
+    let studentC = new Students(prompt("name"),prompt("age"),prompt("email"));
+    arr.push(studentC);
+    return arr;
+}
+
+function display() {
+    str = '<table border="1px">\n' +
+        '<tr>\n' +
+            '<th>Name</th>\n' +
+            '<th>Age</th>\n' +
+            '<th>Email</th>\n' +
+            '<th>More</th>\n' +
+
+        '</tr>\n'
+
+    for (let i = 0; i < arr.length; i++) {
+        str +=
+            '<tr>\n' +
+            '<td>' + arr[i].getName() + '</td>\n' +
+            '<td>' + arr[i].getAge() + '</td>\n' +
+            '<td>' + arr[i].getEmail() + '</td>\n' +
+            '<td>' +
+            '<button onclick="edit( ' + i + ' )">Edit</button>' +
+            '<button onclick="remove( ' + i + ')">Remove</button>' +
+            '</td>\n' +
+            '</tr>\n'
+    }
+    str += '</table>'
+
+
+    document.getElementById('1').innerHTML = str;
+}
+
+display();
+
+
+function edit(index) {
+    alert(index);
+    let newName = prompt('enter the name');
+    let newAge = prompt('enter the age');
+    let newEmail = prompt('enter the email');
+
+
+    arr[index].setName(newName);
+    arr[index].setAge(newAge);
+    arr[index].setEmail(newEmail);
+    display();
+}
+
+function remove(value) {
+    if (confirm('do you wanna remove it')) {
+        arr.splice(value, 1);
+    }
+    display();
 }
