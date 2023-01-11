@@ -113,26 +113,24 @@ let arr = [personA, personB, personC];
 function display() {
     let str = '<table border="1px">\n' +
         '<tr>\n' +
-        '<th>Mã số</th>\n' +
-        '<th>Loại tiết kiệm</th>\n' +
-        '<th>Họ tên</th>\n' +
-        '<th>CMND</th>\n' +
-        '<th>Ngày mở sổ</th>\n' +
-        '<th>Số tiền gửi</th>\n' +
+            '<th>Mã số</th>\n' +
+            '<th>Loại tiết kiệm</th>\n' +
+            '<th>Họ tên</th>\n' +
+            '<th>CMND</th>\n' +
+            '<th>Ngày mở sổ</th>\n' +
+            '<th>Số tiền gửi</th>\n' +
         '</tr>\n'
 
     for (let i = 0; i < arr.length; i++) {
         str +=
             '<tr>\n' +
-            '<td>' + arr[i].getNumbers() + '</td>\n' +
-            '<td>' + arr[i].getTypes() + '</td>\n' +
-            '<td>' + arr[i].getNames() + '</td>\n' +
-            '<td>' + arr[i].getIDCard() + '</td>\n' +
-            '<td>' + arr[i].getDateClass() + '</td>\n' +
-            '<td>' + arr[i].getAmount() + '</td>\n' +
-            '<td>' +
-            '<button onclick="remove( ' + i + ')">Remove</button>' +
-            '</td>\n' +
+                '<td>' + arr[i].getNumbers() + '</td>\n' +
+                '<td>' + arr[i].getTypes() + '</td>\n' +
+                '<td>' + arr[i].getNames() + '</td>\n' +
+                '<td>' + arr[i].getIDCard() + '</td>\n' +
+                '<td>' + arr[i].getDateClass() + '</td>\n' +
+                '<td>' + arr[i].getAmount() + '</td>\n' +
+                '<td>' + '<button onclick="remove( ' + i + ')">Remove</button>' + '</td>\n' +
             '</tr>\n'
     }
     str += '</table>'
@@ -159,7 +157,9 @@ function NewSubmit() {
 }
 
 
-function remove(value) {
+function remove() {
+
+    let value = prompt('Nhập mã số xóa :');
     if (confirm('Bạn muốn xóa sản phầm này')) {
         arr.splice(value, 1);
     }
